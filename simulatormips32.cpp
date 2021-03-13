@@ -204,7 +204,8 @@ class execution
             }
             regs[0] = 0;
         }
-        else if (regex_match(code[i], sm, i_format_e)) { 
+        else if (regex_match(code[i], sm, i_format_e)) 
+        { 
             int reg_d = get_reg(sm[3], reg_map);
             int reg_s = get_reg(sm[4], reg_map);
             int imm = stoi(sm[5]);
@@ -219,6 +220,7 @@ class execution
             
            
             else {
+                cout<<sm[2];
                 cout << "Error at line " << i+1 << " : " <<"invalid instruction I ADDRESS"<< endl;
                 break;
             }
@@ -296,14 +298,20 @@ class execution
                 break;
             }
             bool eq = (regs[reg_1] == regs[reg_2]);
-           
-            if (sm[2] == "bne") {
+            if (sm[2] == "beq") {
+                    if (eq) {
+                        i = br-1;
+                    }
+                }
+            else if (sm[2] == "bne") {
                 if (!eq) {
                     i = br-1;
                 }
             }
+            
             else {
-                cout << "Error at line " << i+1 << " : " <<"invalid instruction"<< endl;
+                cout<<sm[2]<<endl;
+                cout << "Error at line " << i+1 << " : " <<"invalid instruction branch end "<< endl;
                 break;
             }
         }
