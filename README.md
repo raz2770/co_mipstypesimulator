@@ -35,7 +35,7 @@ Here i used object oriented approach to develope this simulator
 1. registers and their data after all instruction exexuted
 2. user memory 
 3. stack pointer data
-4. global pionter data
+4. global pointer data
 
 
 ## sample output of bubble sort:-
