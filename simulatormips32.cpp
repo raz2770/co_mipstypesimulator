@@ -219,7 +219,7 @@ class execution
             
            
             else {
-                cout<<sm[2];
+                
                 cout << "Error at line " << i+1 << " : " <<"invalid instruction I ADDRESS"<< endl;
                 break;
             }
@@ -314,7 +314,7 @@ class execution
                 break;
             }
         }
-        else if (regex_match(code[i], sm, jump_e)) { // j
+        else if (regex_match(code[i], sm, jump_e)) { 
             int br = branches[sm[2]];
             if (br == 0) {
                  cout << "Error at line " << i+1 << " : " <<"invalid instruction"<< endl;
@@ -322,7 +322,7 @@ class execution
             }
             i = br-1;
         }
-        else if (regex_match(code[i], sm, syscall_e)) { // halt
+        else if (regex_match(code[i], sm, syscall_e)) { 
              int reg_d = get_reg("v0", reg_map);
              if(regs[reg_d]==10)
              break;
