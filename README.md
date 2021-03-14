@@ -25,7 +25,7 @@ i used here object oriented approach to develope this simulator
 * la
 * lw
 * sw
-#Instruction to run this software
+## Instruction to run this software
 1. first exexute simulatormips32.cpp file usoing any c++ compiler 
 2. after execution you have to enter assembly file relative path
 ## we are printing these following things as output:-
