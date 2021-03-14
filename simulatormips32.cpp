@@ -80,7 +80,6 @@ class parser
                 if (regex_match(line, sm, data_word_e)) {
                     if (sm[2] == "word") {
                         string els = sm[3];
-                        cout<<"els"<<els<<endl;
                         
 
                         els = regex_replace(els, regex("\\s+$"), "");

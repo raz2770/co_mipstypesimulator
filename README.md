@@ -7,4 +7,4 @@ i used here object oriented approach to develope this simulator
 3. parser
 4. execution
 5. mipssimulator
-![image info](output.png)
+![image info](output1.jpg)
