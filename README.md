@@ -6,7 +6,7 @@ Here i used object oriented approach to develope this simulator
 2. screen 
 3. parser
 4. execution
-5. mipssimulator
+5. mips simulator
 
 ## We implement here following mips instructions
 #### R type
