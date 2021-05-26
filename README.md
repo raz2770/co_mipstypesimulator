@@ -28,7 +28,6 @@ Here we used object oriented approach to develope this simulator
 * sw
 ### data type support
 * word
-<<<<<<< HEAD
 ## Instruction to run this software
 1. First execute simulatormips32.cpp file using any c++ compiler 
 ## Instructions to run this software
