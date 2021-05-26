@@ -216,11 +216,7 @@ class execution
               
                 regs[reg_d] = regs[reg_s] + imm;
             }
-            else if (sm[2] == "subi") {
-              
-                regs[reg_d] = regs[reg_s] - imm;
-            }
-            
+           
            
             else {
                 

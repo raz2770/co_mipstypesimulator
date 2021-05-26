@@ -26,11 +26,13 @@ loop:
 
 jump:
 	addi $s0, $s0, 4
-	subi $s2, $s2, 1 
+	li $t5 ,1
+	sub $s2, $s2, $t5 
 	j loop
 
 jmp:
-	subi $s1, $s1, 1 
+	li $t6 ,1
+	sub $s1, $s1, $t6
 	la $s0, array
 	j bubbleSort 
 	
