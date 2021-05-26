@@ -1,14 +1,14 @@
 # Computer organization project (phase 1)
 ### 32 bits mips type processor simulator
-Here i used object oriented approach to develope this simulator
-#### here we use following classes in developing this
+Here we used object oriented approach to develope this simulator
+#### In this we used following classes 
 1. registers
 2. screen 
 3. parser
 4. execution
 5. mipssimulator
 
-## We implement here following mips instructions
+## We have implemented here the following mips instructions
 #### R type
 * add
 * sub
@@ -28,8 +28,13 @@ Here i used object oriented approach to develope this simulator
 * sw
 ### data type support
 * word
+<<<<<<< HEAD
 ## Instruction to run this software
 1. First execute simulatormips32.cpp file using any c++ compiler 
+=======
+## Instructions to run this software
+1. First exexute simulatormips32.cpp file using any c++ compiler 
+>>>>>>> 75285ae33a3f152365d93eb433193a23f062c31b
 2. After execution we have to enter assembly file relative path
 ## We are printing these following things as output:-
 1. registers and their data after all instruction exexuted
