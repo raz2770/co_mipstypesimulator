@@ -1,40 +1,81 @@
 .data
-array: .word 5, 3, 1, 6, 2, 8, 9, 10, 1, 8
+array:  .word 5, 3, 1, 6, 2, 8, 9, 10, 1, 8,12
 
 .text
 .globl main
 main:
-    la $t1,array
-    li $s1,40
-    li $s2,0
-    li $s3,4
-    bne $s1,$s2,L2
-L2: 
-    beq $s1,$s2,out
-    add $t1,$t1,$s2
-    lw $t0,0($t1)   #a[i]
-L3: 
-    beq $s3,$s1,incc
-    add $t1,$t1,$s3
-    lw $t2,0($t1)   #a[j]
-    slt $t3,$t0,$t2
-    beq $t3,$0,swap
-L4: 
-    addi $s3,$s3,4
-    j L3
+	la $s0, array
+	addi $s1, $zero, 10
+	j bubbleSort
+	
+bubbleSort:
+	beq  $zero, $s1, out
+	add  $s2, $s1, $zero
+	j loop
 
-swap:   
-    sw $t0,0($t1)
-    sub $t1,$t1,$s2
-    sw $t2,0($t1)
-    j L4
+loop:
+	beq $zero, $s2, jmp
+	lw  $t0, 0($s0)
+	lw  $t1, 4($s0)
 
-incc:
-    addi $s2,$s2,4
-    j L2
+	slt $t2, $t0, $t1
+	bne $zero, $t2, jump
+	sw  $t0, 4($s0)
+	sw  $t1, 0($s0)
+	j jump
 
+jump:
+	addi $s0, $s0, 4
+	subi $s2, $s2, 1 
+	j loop
 
+jmp:
+	subi $s1, $s1, 1 
+	la $s0, array
+	j bubbleSort 
+	
 out:
-li $v0,10
-syscall
+	addi $s1, $zero, 11
+	j print
+	
+print:
+	
+	lw $t5, 0($s0)
+    sw $t5, 0($gp)
+	addi $s0, $s0, 4
+    lw $t5, 0($s0)
+    sw $t5, 4($gp)
+	addi $s0, $s0, 4
+    lw $t5, 0($s0)
+    sw $t5, 8($gp)
+	addi $s0, $s0, 4
+    lw $t5, 0($s0)
+    sw $t5, 12($gp)
+	addi $s0, $s0, 4
+    lw $t5, 0($s0)
+    sw $t5, 16($gp)
+	addi $s0, $s0, 4
+    lw $t5, 0($s0)
+    sw $t5, 20($gp)
+	addi $s0, $s0, 4
+    lw $t5, 0($s0)
+    sw $t5, 24($gp)
+	addi $s0, $s0, 4
+    lw $t5, 0($s0)
+    sw $t5, 28($gp)
+	addi $s0, $s0, 4
+    lw $t5, 0($s0)
+    sw $t5, 32($gp)
+	addi $s0, $s0, 4
+	lw $t5, 0($s0)
+    sw $t5, 36($gp)
+	addi $s0, $s0, 4
+    lw $t5, 0($s0)
+    sw $t5, 40($gp)
+	addi $s0, $s0, 4
+    
+	j jmpp
 
+jmpp:
+	li $v0,10
+    syscall
